@@ -1,0 +1,53 @@
+Class Node:
+
+ Def __init__(self, value):
+
+ Self.value = value
+ Self.left = None
+ Self.right = None
+Class BST:
+ Def __init__(self):
+ Self.root = None
+ Def insert(self, value):
+ Def insert_helper(node, value):
+ If node is None:
+ Return Node(value)
+ Elif value < node.value:
+ Node.left = insert_helper(node.left, value)
+ Else:
+ Node.right = insert_helper(node.right, value)
+ Return node
+ Self.root = insert_helper(self.root, value)
+ Def search(self, value):
+
+ Def search_helper(node, value):
+
+ If node is None:
+ Return False
+ Elif node.value == value:
+ Return True
+ Elif value < node.value:
+ Return search_helper(node.left, value)
+ Else:
+ Return search_helper(node.right, value)
+ Return search_helper(self.root, value)
+ Def preorder(self, root):
+ If root is None:
+ Return
+ Print(root.value)
+ Self.preorder(root.left)
+ Self.preorder(root.right)
+ Def inorder(self, root):
+ If root is None:
+ Return
+ Self.inorder(root.left)
+ Print(root.value)
+ Self.inorder(root.right)
+
+ Def postorder(self, root):
+
+ If root is None:
+ Return
+ Self.postorder(root.left)
+ Self.postorder(root.right)
+ Print(root.value)
